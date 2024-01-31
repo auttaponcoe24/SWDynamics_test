@@ -1,0 +1,9 @@
+@import "../styles/global.scss";
+
+.header {
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	margin: 1rem 1rem;
+}
