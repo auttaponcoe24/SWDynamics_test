@@ -1,11 +1,187 @@
+@import "../styles/global.scss";
+
 .contain {
 	display: flex;
 	flex-direction: column;
-	margin: 1rem;
+	margin: 1rem auto;
 
 	&__top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin: 0 4rem 2rem;
+	}
+
+	&__down {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		margin: 4rem;
+	}
+}
+
+// action
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.active {
+	// background-color: #3498db;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 1rem;
+}
+
+$button-size: 100px;
+$transition-duration: 0.5s;
+
+.button {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 3rem;
+	cursor: pointer;
+	transition: transform $transition-duration;
+	border: none;
+
+	&:hover {
+		// transform: rotate(45deg);
+		background-color: $primary;
+	}
+
+	&:active {
+		// transform: rotate(45deg);
+		background-color: $primary;
+	}
+
+	&__inlineText {
+		color: #ffffff;
+		background-color: $secondary;
+		margin: auto;
+		padding: 2px 4px;
+		transform: translateY(16px);
+		border: none;
+		border-radius: 1rem;
+	}
+}
+
+.box {
+	display: flex;
+	margin: 1rem;
+}
+
+.rectangular {
+	@extend .button;
+	width: $button-size;
+	height: $button-size;
+	background-color: $grey-400;
+}
+
+.circle {
+	@extend .button;
+	width: $button-size;
+	height: $button-size;
+	border-radius: 50%;
+	background-color: $grey-400;
+}
+.oval {
+	@extend .button;
+	width: 180px;
+	height: $button-size;
+	border-radius: 50%;
+	background-color: $grey-400;
+}
+.trapezoid {
+	@extend .button;
+	width: $button-size;
+	height: $button-size;
+	border-left: 100px solid $grey-400;
+	border-right: 100px solid $grey-400;
+	border-bottom: 100px solid $grey-400;
+	// transform: skewY(18deg);
+}
+.rectangle {
+	@extend .button;
+	width: $button-size;
+	height: $button-size;
+	border-left: 100px solid $grey-400;
+	border-right: 100px solid $grey-400;
+	border-bottom: 100px solid $grey-400;
+	// transform: skewY();
+}
+.rhombus {
+	@extend .button;
+	width: $button-size;
+	height: $button-size;
+	border-left: 140px / 2 solid transparent;
+	border-right: 140px / 2 solid transparent;
+	border-bottom: 100px solid $grey-400;
+	transform: skewY(18deg);
+}
+
+.triangleTop {
+	@extend .button;
+	width: 0;
+	height: 0;
+	border-left: $button-size/2 solid transparent;
+	border-right: $button-size/2 solid transparent;
+	border-bottom: $button-size solid $grey-400;
+}
+.triangleDown {
+	@extend .button;
+	width: 0;
+	height: 0;
+	border-left: $button-size/2 solid transparent;
+	border-right: $button-size/2 solid transparent;
+	border-bottom: $button-size solid $grey-400;
+	transform: rotate(180deg);
+}
+.triangleLeft {
+	@extend .button;
+	width: 0;
+	height: 0;
+	border-left: $button-size/2 solid transparent;
+	border-right: $button-size/2 solid transparent;
+	border-bottom: $button-size solid $grey-400;
+	transform: rotate(-90deg);
+}
+.triangleRight {
+	@extend .button;
+	width: 0;
+	height: 0;
+	border-left: $button-size/2 solid transparent;
+	border-right: $button-size/2 solid transparent;
+	border-bottom: $button-size solid $grey-400;
+	transform: rotate(-270deg);
+}
+
+.gridLayout {
+	display: grid;
+	grid-template-columns: repeat(3, $button-size);
+	gap: 10px;
+}
+
+.moveShape {
+	transition: transform $transition-duration;
+
+	&:hover {
+		transform: translateY(50px) rotate(-90deg);
+	}
+}
+
+.movePosition {
+	&:hover {
+		grid-row: span 2;
+	}
+}
+
+.randomPosition {
+	&:hover {
+		position: absolute;
+		top: random(1000) + px;
+		left: random(1000) + px;
 	}
 }
