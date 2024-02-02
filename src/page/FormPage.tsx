@@ -260,8 +260,10 @@ export default function FormPage({}: Props) {
 			</div>
 
 			{showForm()}
-			{/* {JSON.stringify(dataTable)} */}
-			<TableData dataTable={dataTable} />
+			<div className={style.contain__top__table}>
+				{/* {JSON.stringify(dataTable)} */}
+				<TableData dataTable={dataTable} />
+			</div>
 		</div>
 	);
 }
