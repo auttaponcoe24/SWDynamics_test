@@ -22,10 +22,10 @@ export default function HomePage({}: Props) {
 					<h1 className={style.home__card__item__h1}>{t("Test")} 1</h1>
 					<p>{t("Layout & Style")}</p>
 				</button>
-				<div className={style.home__card__item}>
+				<button className={style.home__card__item}>
 					<h1 className={style.home__card__item__h1}>{t("Test")} 2</h1>
 					<p>{t("Connect API")}</p>
-				</div>
+				</button>
 				<button
 					onClick={() => navigate(`/form-page`)}
 					className={style.home__card__item}
